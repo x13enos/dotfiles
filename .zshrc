@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PATH="/usr/local/bin:$PATH"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -66,11 +67,13 @@ alias zshconf="vim ~/.zshrc"
 alias pubkey='cat ~/.ssh/id_rsa.pub | pbcopy'
 alias v='vim'
 alias be="bundle exec"
-alias dbm="bundle exec rake db:migrate"
+alias dbm="bundle exec rake db:migrate && bundle exec rake db:test:prepare"
 alias dbtp="bundle exec rake db:test:prepare"
 alias rubocop_current_project='git diff --name-only HEAD | grep "\.rb$" | xargs rubocop -c rubocop.yml --rails'
 alias fs="foreman start"
 alias tmuxn='tmux attach || tmux new'
+alias weather='curl wttr.in'
+alias pg_restart="pg_ctl -D /usr/local/var/postgres stop -s -m fast && pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR="vim"
