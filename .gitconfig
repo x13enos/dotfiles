@@ -1,0 +1,31 @@
+[user]
+  name = Andres Sild 
+  email = x3enos@gmail.com
+  signingkey = 4369AC8D
+[mergetool]
+  keepBackup = true
+[push]
+  default = simple
+[core]
+  editor = vim
+  excludesfile = /Users/x3enos/.gitignore_global
+[diff]
+  tool = vimdiff
+[color]
+  ui = true
+  interactive = true
+  diff = true
+[merge]
+  tool = vimdiff
+[pull]
+  ff = only
+  rebase = true
+[commit]
+  gpgsign = true
+
+[alias]
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
+  publish = "!git push -u origin $(git branch-name)"
+  please = push --force-with-lease
+[status]
+  relativePaths = true
